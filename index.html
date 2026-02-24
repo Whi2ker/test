@@ -17,7 +17,7 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px;
         }
 
         .container {
@@ -262,6 +262,17 @@
             justify-content: center;
         }
 
+        .podcast-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .chapters-summary {
             background: white;
             padding: 25px;
@@ -304,20 +315,73 @@
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+            }
+
             header h1 {
-                font-size: 2.5em;
+                font-size: 3em;
+            }
+
+            header p {
+                font-size: 1.3em;
             }
 
             .content {
-                padding: 20px;
+                padding: 15px;
             }
 
             .section {
-                padding: 20px;
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
             }
 
             .members-list {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .member-card {
+                padding: 25px 15px;
+            }
+
+            .member-card h3 {
+                font-size: 1.1em;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                padding: 15px;
+            }
+
+            .chapter-item {
+                padding: 15px;
+                margin-bottom: 12px;
+            }
+
+            .chapter-item h4 {
+                font-size: 1.1em;
+            }
+
+            .topic-description {
+                padding: 15px;
+            }
+
+            .topic-description h3 {
+                font-size: 1.3em;
+            }
+
+            .download-btn {
+                padding: 12px 25px;
+                font-size: 0.95em;
+                margin: 8px 5px;
             }
 
             .menu-toggle {
@@ -327,6 +391,7 @@
             .navbar-container {
                 flex-direction: column;
                 align-items: stretch;
+                padding: 0;
             }
 
             .navbar ul {
@@ -342,8 +407,30 @@
             }
 
             .navbar a {
-                padding: 15px;
+                padding: 15px 20px;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 1em;
+            }
+
+            .presentation-container,
+            .video-container,
+            .podcast-container {
+                padding: 15px;
+                min-height: 250px;
+            }
+
+            .placeholder-text {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 10px;
+            }
+
+            footer {
+                padding: 20px 15px;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -366,6 +453,7 @@
                     <li><a href="#tailieu" onclick="closeMenu()">Tài liệu</a></li>
                     <li><a href="#thuyettrinh" onclick="closeMenu()">Thuyết trình</a></li>
                     <li><a href="#video" onclick="closeMenu()">Video</a></li>
+                    <li><a href="#podcast" onclick="closeMenu()">Podcast</a></li>
                 </ul>
             </div>
         </nav>
@@ -454,10 +542,7 @@
 
                 <div class="download-section">
                     <h3>📄 File Word</h3>
-                    <a href="#" class="download-btn disabled">Tải xuống báo cáo (Đang cập nhật)</a>
-                    <p class="placeholder-text">
-                        File Word sẽ được cập nhật sau. Để thêm file, upload file .docx vào thư mục và cập nhật link tại đây.
-                    </p>
+                    <a href="documents/bao-cao-lam-phat-that-nghiep.docx" class="download-btn" download>Tải xuống báo cáo Word</a>
                 </div>
             </div>
 
@@ -467,13 +552,7 @@
                 <div class="presentation-container">
                     <div class="placeholder-text">
                         <h3>🎨 Canva Presentation</h3>
-                        <p>Bài thuyết trình sẽ được nhúng tại đây.</p>
-                        <p>Để thêm: Thay thế phần này bằng iframe embed code từ Canva.</p>
-                        <br>
-                        <p><strong>Hướng dẫn:</strong></p>
-                        <p>1. Mở presentation trên Canva</p>
-                        <p>2. Click "Share" → "More" → "Embed"</p>
-                        <p>3. Copy embed code và thay thế vào đây</p>
+                        <p>Bài thuyết trình Canva sẽ được nhúng tại đây.</p>
                     </div>
                 </div>
             </div>
@@ -485,10 +564,17 @@
                     <div class="placeholder-text">
                         <h3>🎥 Video Presentation</h3>
                         <p>Video thuyết trình sẽ được hiển thị tại đây.</p>
-                        <p>Để thêm: Upload file video vào thư mục và cập nhật đường dẫn.</p>
-                        <br>
-                        <p><strong>Định dạng hỗ trợ:</strong> MP4, WebM, OGG</p>
-                        <p><strong>Hoặc:</strong> Nhúng từ YouTube/Google Drive</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Podcast -->
+            <div class="section" id="podcast">
+                <h2>Podcast</h2>
+                <div class="podcast-container">
+                    <div class="placeholder-text">
+                        <h3>🎙️ Podcast Audio</h3>
+                        <p>Podcast sẽ được nhúng tại đây.</p>
                     </div>
                 </div>
             </div>
